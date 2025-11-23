@@ -24,14 +24,43 @@
 </header>
 
 <main>
+<!--Slideshow -->
+    <div class="slideshow">
+        <img src="images/food1.jpg" class="slide active">
+        <img src="images/food2.jpg" class="slide">
+        <img src="images/food3.jpg" class="slide">
+    </div>
 
+<!--Page Content-->
+<section class="content">
+<h1>Welcome to *insert name of restaurant here*</h1>
+
+<p>At ****, we celebrate the rich flavors of Indian cuisine with classic recipes, bold spices, and warm hospitality. Whether you’re craving savory street foods or soulful home-style meals, you’ll find something to love.</p>
+
+</section>
 
 </main>
 
-</body>
-
 <footer>
-
+    *insert restaurant name here* | 123 Flavor St, Food City | (123) 456-7890
 </footer>
+
+<!-- JS  -->
+
+<script>
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function changeSlide() 
+    {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }
+
+    setInterval(changeSlide, 5000); // change every 5 seconds
+</script>
+
+</body>
 
 </html>
