@@ -80,7 +80,7 @@ function setupForm() {
         const formData = new FormData(form);
         
         try {
-            const response = await fetch('insert_item.php', {
+            const response = await fetch('insert.php', {
                 method: 'POST',
                 body: formData
             });
