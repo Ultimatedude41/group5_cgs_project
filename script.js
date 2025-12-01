@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // Fetch and display menu items
 async function loadMenu() {
     try {
-        const response = await fetch('/CGS_project/menu.php?format=json');
+        const response = await fetch('/group5_cgs_project/menu.php?format=json');
         const result = await response.json();
         
         if (result.success) {
