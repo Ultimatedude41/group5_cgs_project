@@ -67,6 +67,23 @@ window.addEventListener('DOMContentLoaded', () => {
     setInterval(updateStatus, 60_000);
 });
 
+// Contact form
+window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const msg = document.getElementById('contact-msg');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const name = (fd.get('name') || '').toString().trim() || 'Friend';
+        // simulate send
+        msg.innerHTML = `<p class="success">Thanks, ${name}! Your message was sent (simulated).</p>`;
+        form.reset();
+        setTimeout(() => { msg.innerHTML = ''; }, 5000);
+    });
+});
+
 
 // Fetch and display menu items
 async function loadMenu() {
